@@ -39,3 +39,5 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 1883
+  nodePort: 31333
+  stableNodePort: false

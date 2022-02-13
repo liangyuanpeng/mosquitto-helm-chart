@@ -11,5 +11,9 @@ spec:
       targetPort: mqtt
       protocol: TCP
       name: mqtt
+      {{- if .Values.service.stableNodePort }}
+      nodePort: {{ .Values.service.nodePort }}
+      {{- end }}
+      
   selector:
     {{- include "mosquitto.selectorLabels" . | nindent 4 }}
